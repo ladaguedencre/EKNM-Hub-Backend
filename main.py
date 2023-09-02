@@ -24,7 +24,7 @@ def goods():
 def brews():
     return get_brews()
 
-@app.route('/api/articles/<id>')
+@app.route('/api/archive/<id>')
 def article(id: str):
     article = get_article(id)
     if not article:

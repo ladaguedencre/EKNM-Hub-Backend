@@ -5,33 +5,21 @@ from common import common_db
 @dataclass
 class Article:
     id: str
-    author: str
-    background: str
-    category: str
-    content: any
-    date: str
-    name: any
-    section: str
+    title: str
+    subtitle: str
+    content: str
 
     def __init__(
         self, 
         id: str,
-        author: str,
-        background: str,
-        category: str,
-        content: any,
-        date: str,
-        name: any,
-        section: str
+        title: str,
+        subtitle: str,
+        content: str
     ):
         self.id = id
-        self.author = author
-        self.background = background
-        self.category = category
+        self.title = title
+        self.subtitle = subtitle
         self.content = content
-        self.date = date
-        self.name = name
-        self.section = section
 
 
 def get_article(id: str) -> List[Article]:
@@ -41,13 +29,9 @@ def get_article(id: str) -> List[Article]:
     if item:
         return asdict(Article(
             item['id'],
-            item.get('author', None),
-            item.get('background', None),
-            item.get('category', None),
+            item['title'],
+            item['subtitle'],
             item['content'],
-            item.get('date', None),
-            item['name'],
-            item.get('section', None)
         ))
 
     return None    

@@ -7,6 +7,7 @@ class Article:
     id: str
     title: str
     subtitle: str
+    background: str
     content: str
 
     def __init__(
@@ -14,11 +15,13 @@ class Article:
         id: str,
         title: str,
         subtitle: str,
+        background: str,
         content: str
     ):
         self.id = id
         self.title = title
         self.subtitle = subtitle
+        self.background = background
         self.content = content
 
 
@@ -31,6 +34,7 @@ def get_article(id: str) -> List[Article]:
             item['id'],
             item['title'],
             item['subtitle'],
+            item['background'],
             item['content'],
         ))
 

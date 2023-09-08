@@ -39,5 +39,6 @@ def get_bindings() -> List[Binding]:
                 item['category']
             )
         )
+        results.sort(key=lambda item: item.date, reverse=True)
 
     return results    

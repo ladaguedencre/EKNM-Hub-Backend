@@ -1,6 +1,6 @@
 # Read the input Markdown file
-input_file_path = 'input.md'
-output_file_path = 'output.md'
+input_file_path = './../data/input.md'
+output_file_path = './../data/output.md'
 
 with open(input_file_path, 'r') as input_file:
     # Read the content of the input file
@@ -9,6 +9,7 @@ with open(input_file_path, 'r') as input_file:
 # Replace characters
 markdown_content = markdown_content.replace('\n', '\\n')
 markdown_content = markdown_content.replace('\'', '\\\'')
+markdown_content = markdown_content.replace('\"', '\\\"')
 
 # Write the modified content to the output file
 with open(output_file_path, 'w') as output_file:
